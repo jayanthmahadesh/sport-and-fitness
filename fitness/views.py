@@ -16,14 +16,17 @@ class Login(View):
 
         username_actual = User.objects.get(username=username_tobe_check)
 
-        if username_actual:
-            flag = check_password(password_tobe_check, username_actual.password)
+        try:
+            if username_actual:
+                flag = check_password(password_tobe_check, username_actual.password)
 
-            if flag:
-                return redirect('indexpage')
+                if flag:
+                    return redirect('indexpage')
+                else:
+                    return render(request, 'login.html')
             else:
                 return render(request, 'login.html')
-        else:
+        except:
             return render(request, 'login.html')
 
         # if(password.length)
