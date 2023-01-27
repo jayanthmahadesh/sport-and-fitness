@@ -62,7 +62,7 @@ class SignUp(View):
                     user.save()
                     return redirect('indexpage')
         except:
-            return render(request,'signup.html')
+            return render(request, 'signup.html')
 
 
 class Index(View):

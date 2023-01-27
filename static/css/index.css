@@ -2,15 +2,13 @@ body{
     background-color: rgb(0, 0, 0);
       margin:0px;
       padding:0px;
-      width: 98%;
-      height: 98%;
+     
       color: white;
       margin-top: 20px;
   
   }
 
 	#b{
-
         width: 100%;
         height: 100%;
         position: fixed;
@@ -33,15 +31,15 @@ body{
       }
       #b::after{
         content: "sdfasdf";
-        width: 95%;
-        height: 95%;
-        background: white;
+        width: 99%;
+        height: 97%;
+        background: rgb(0, 0, 0);
         position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
         color: #ff0052;
-        /* margin-left: 10px; */
+        margin-top: -10px;
   
       }
           @keyframes rotate {
@@ -55,11 +53,12 @@ body{
       
   #myVideo {
     position: absolute;
-    right: 0;
+    /* right: 50px;
     
-    bottom: 5px;
-    width: 100%;
-    height: 98%;
+    bottom: 50px; */
+    width: 200%;
+    margin-left: -750px;
+    height: 90%;
     z-index: -1;
 /* margin-top: 100px; */
   }
@@ -156,11 +155,12 @@ li a {
     cursor: pointer;
 }
 .heading{
-    margin-top: 70px;
+    margin-top: 40px;
+    margin-left: 220px;
     color: white;
     z-index: 100;
     /* background-color: red; */
-    margin-left: 100px;
+    /* margin-left: 100px; */
 font-family:cursive;
 font-size: 30px;
 }
