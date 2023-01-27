@@ -68,3 +68,8 @@ class SignUp(View):
 class Index(View):
     def get(self, request):
         return render(request, 'index.html')
+
+
+class outdoor(View):
+    def get(self,request):
+        return render(request,'outdoor.html')
