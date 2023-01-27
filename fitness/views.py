@@ -76,3 +76,12 @@ class Index(View):
 class outdoor(View):
     def get(self,request):
         return render(request,'outdoor.html')
+    
+
+class Indoor(View):
+    def get(self,request):
+        return render(request,'indoor.html')
+    
+class timing(View):
+    def get(self,request):
+        return render(request,'timing.html')
