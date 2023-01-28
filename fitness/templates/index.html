@@ -21,10 +21,11 @@
         <!-- navbar start -->
         <div class="navbar" style="z-index:101 ;">
             <ul>
-                <li><a class="icona" href="#home"><img class="icon" src="/static/images/Screenshot 2023-01-27 at 2.35.55 PM.png" alt=""></a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li style="float:right"><a href="#about">About</a></li>
+                <b>
+
+                    <li><a class="webname" href="#home" style="font-size: 20px;">FITSPRINT</a></li>
+                </b>
+                <li style="float:right"><a href="#about">Login</a></li>
               
             </ul>
         </div>
@@ -36,6 +37,7 @@
         <!-- two cards start -->
     <div class="cards_container">
         <div class="card_one">
+            <div class="heading1">Indoor activities</div>
             <div class="image">
                 <img src="/static/images/WhatsApp Image 2023-01-27 at 4.36.47 PM.jpeg" alt="">
             </div>
@@ -45,6 +47,7 @@
             </div>
         </div>
         <div class="card_two">
+            <div class="heading1">outdoor activities</div>
             <div class="image">
                 <img src="/static/images/WhatsApp Image 2023-01-27 at 4.35.19 PM.jpeg" alt="">
             </div>
@@ -69,13 +72,16 @@
             // console.log("woeking")
         }
 
- var time = new Date();
-var t = time.toLocaleString('en-US', { hour: 'numeric', hour12: true })
-var ans = time.getHours();
-const last2 = t.slice(-2);
-if((last2=="PM" && ans>=6)||(last2=="AM && ans<=6")){
-    document.body.classList.toggle("darktheme");
-}
+
+        {% comment %} toggle according to time  {% endcomment %}
+
+        var time = new Date();
+        var t = time.toLocaleString('en-US', { hour: 'numeric', hour12: true })
+        var ans = time.getHours();
+        const last2 = t.slice(-2);
+        if((last2=="PM" && ans>=6)||(last2=="AM && ans<=6")){
+             document.body.classList.toggle("darktheme");
+        }
 
 
 

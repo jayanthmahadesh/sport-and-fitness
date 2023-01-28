@@ -9,6 +9,11 @@
     --weight1: 200;
     --weight2: 400;
     --weight3: 600;
+    --main-bg-color:rgb(0, 0, 0);
+    --navbarcolor1:red;
+    --navbarcolor2:rgb(255, 102, 0);
+    --filter:blur(0px);
+    --border:red;
 }
 
 body {
@@ -18,7 +23,31 @@ body {
     /* background-color: red; */
 }
 
+ul{
+    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(90deg, var(--navbarcolor1) 24%, var(--navbarcolor2) 55%, var(--navbarcolor1) 100%);
 
+  /* position: sticky; */
+  /* width: 100%; */
+}
+li {
+    float: left;
+  }
+  
+li a {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    padding: 20px 30px;
+    text-decoration: none;
+  }
+  .icon{
+    width: 30px;
+    height: 25px;
+    
+  }
 
 h1:first-of-type {
     font-weight: var(--weight1);
