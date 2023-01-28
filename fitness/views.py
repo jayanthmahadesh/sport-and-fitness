@@ -72,6 +72,9 @@ class Index(View):
     def get(self, request):
         return render(request, 'index.html')
 
+    def post(self,request):
+        return render(request, 'index.html')
+
 
 class outdoor(View):
     def get(self,request):
@@ -88,5 +91,13 @@ class timing(View):
 
 class register(View):
     def get(self,request):
-        return(render(request,'register.html'))
+        return render(request,'register.html')
+
+
+class Success(View):
+    def get(self,request):
+        return render(request,'success.html')
+
+    def post(self,request):
+        return redirect('indexpage')
     
