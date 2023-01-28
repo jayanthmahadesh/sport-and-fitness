@@ -1,12 +1,13 @@
 from django.urls import path
 from .views import Login, SignUp, Index,outdoor,Indoor,timing,register,Success
-from .views import timing_all,Success_Custom
+from .views import timing_all,Success_Custom,Logout
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     path('', Index.as_view(), name='indexpage'),
     path('login', Login.as_view(), name='login'),
+    path('logout', Logout.as_view(), name='logout'),
     path('signup', SignUp.as_view(), name='signup'),
     path('outdoor',outdoor.as_view(),name='outdoor'),
     path('Indoor',Indoor.as_view(),name='Indoor'),

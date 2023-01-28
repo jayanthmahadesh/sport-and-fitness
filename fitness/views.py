@@ -23,6 +23,7 @@ class Login(View):
                     flag = check_password(password_tobe_check, username_actual.password)
 
                     if flag:
+                        request.session['username'] = username_actual.username
                         return redirect('indexpage')
                     else:
                         return render(request, 'login.html')
@@ -32,6 +33,12 @@ class Login(View):
             return render(request, 'login.html')
 
         # if(password.length)
+
+
+class Logout(View):
+    def get(self, request):
+        request.session.clear()
+        return redirect('login')
 
 
 class SignUp(View):
