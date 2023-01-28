@@ -196,13 +196,14 @@
         // console.log("woeking")
     }
 
-var time = new Date();
-var t = time.toLocaleString('en-US', { hour: 'numeric', hour12: true })
-var ans = time.getHours();
-const last2 = t.slice(-2);
-if((last2=="PM" && ans>=6)||(last2=="AM && ans<=6")){
-document.body.classList.toggle("darktheme");
-}
+    var time = new Date();
+        var t = time.toLocaleString('en-US', { hour: 'numeric', hour12: true })
+        var ans = time.getHours();
+        const last2 = t.slice(-2);
+        if(ans<6 || ans>18){
+             document.body.classList.toggle("darktheme");
+        }
+
 
 
 
