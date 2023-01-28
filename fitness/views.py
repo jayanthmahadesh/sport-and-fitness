@@ -85,3 +85,8 @@ class Indoor(View):
 class timing(View):
     def get(self,request):
         return render(request,'timing.html')
+
+class register(View):
+    def get(self,request):
+        return(render(request,'register.html'))
+    

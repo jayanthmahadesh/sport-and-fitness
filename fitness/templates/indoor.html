@@ -22,6 +22,16 @@
        
         <!-- navbar end -->
         <div class="mainheading">Indoor activites</div>
+
+
+        <div class="themeimage" id="theme">
+            <img src="static/images/theme.png" alt="">
+        </div>
+
+
+
+
+
         <div class="workingheading">How it works</div>
     <div class="working">
 
@@ -70,7 +80,7 @@
     <div class="scrollable">
        
 
-        <a href="#"><div class="scroll_card">
+        <a href="register"><div class="scroll_card">
 
                 <div class="heading">
                     Push-up
@@ -90,7 +100,7 @@
 
         
         </div></a>
-        <a href="#"><div class="scroll_card">
+        <a href="register"><div class="scroll_card">
             <div class="cont">
                 <div class="heading">
                     Running
@@ -110,7 +120,7 @@
             </div>
         
         </div></a>
-        <a href="#"><div class="scroll_card">
+        <a href="register"><div class="scroll_card">
             <div class="cont">
                 <div class="heading">
                     Skipping
@@ -130,7 +140,7 @@
             </div>
         
         </div></a>
-        <a href="#"><div class="scroll_card">
+        <a href="register"><div class="scroll_card">
             <div class="cont">
                 <div class="heading">
                     marathon
@@ -150,7 +160,7 @@
             </div>
         
         </div></a>
-        <a href="#"><div class="scroll_card">
+        <a href="register"><div class="scroll_card">
             <div class="cont">
                 <div class="heading">
                     Crunches
@@ -175,5 +185,24 @@
      
       
     </div>
+    
 </body>
 </html>
+<script>
+    var theme = document.getElementById("theme");
+    theme.onclick = function () {
+        document.body.classList.toggle("darktheme");
+        // console.log("woeking")
+    }
+
+var time = new Date();
+var t = time.toLocaleString('en-US', { hour: 'numeric', hour12: true })
+var ans = time.getHours();
+const last2 = t.slice(-2);
+if((last2=="PM" && ans>=6)||(last2=="AM && ans<=6")){
+document.body.classList.toggle("darktheme");
+}
+
+
+
+</script>

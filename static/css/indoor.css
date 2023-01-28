@@ -1,3 +1,23 @@
+:root{
+    --main-bg-color:rgb(0, 0, 0);
+    --navbarcolor1:red;
+    --navbarcolor2:rgb(255, 102, 0);
+    --filter:blur(0px);
+    --border:red;
+    --text:white;
+    --text2:gold;
+  }
+  .darktheme{
+    --main-bg-color:rgb(226, 247, 255);
+    --navbarcolor1: rgb(129 129 129);
+    --navbarcolor2:rgb(251, 225, 208);
+    --filter:blur(10px);
+    --border:black;
+    --text:black;
+    --text2:black;
+  }
+  
+
 
 body{
     /* background-color: black; */
@@ -20,18 +40,18 @@ body{
   }
   #b::before{
     content: "";
-    background-image: conic-gradient(rgb(255, 4, 4) 0deg, rgb(0, 0, 0) 50deg, #000000 50deg, #000000 270deg);
+    background-image: conic-gradient(var(--border) 0deg, var(--main-bg-color) 50deg, var(--main-bg-color) 50deg,var(--main-bg-color) 270deg);
   width:20000%;
     height:20000%;
     position: absolute;
     animation: rotate 4.1s linear infinite;
   }
   #b::after{
-    content: "sdfasdf";
+    content: "";
     width: 98%;
     height: 98%;
 
-    background: rgb(0, 0, 0);
+    background: var(--main-bg-color);
     position: absolute;
     display: flex;
     justify-content: center;
@@ -53,7 +73,7 @@ ul{
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: linear-gradient(90deg, rgba(255,14,14,1) 24%, rgb(255, 133, 39) 55%, rgba(255,0,0,1) 100%);
+  background: linear-gradient(90deg, var(--navbarcolor1) 24%, var(--navbarcolor2) 55%, var(--navbarcolor1) 100%);
 
   /* position: sticky; */
   /* width: 100%; */
@@ -64,7 +84,7 @@ li {
   
 li a {
     display: inline-block;
-    color: rgb(255, 255, 255);
+    color: var(--text);
     padding: 20px 30px;
     text-decoration: none;
   }
@@ -75,13 +95,13 @@ li a {
   }
 
 .mainheading{
-    color:white;
+    color:var(--text);
     font-size: 40px;
     margin-left: 50px;
   
 }
 .workingheading{
-    color:white;
+    color:var(--text);
     font-size: 50px;
     /* margin-left: 50px; */
     margin-top:50px;
@@ -101,12 +121,12 @@ li a {
     width: 250px;
     height: 350px;
 /* background-color: red; */
-box-shadow:0px 0px 10px red ;
+box-shadow:0px 0px 10px var(--navbarcolor1);
 display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    color: gold;
+    color: var(--text2);
     font-size: 20px;
   }
   .card img{
@@ -118,7 +138,7 @@ display: flex;
     font-size: 40px;
     /* align-items: center; */
     text-align: center;
-    color: white;
+    color: var(--text);
     margin-top: 100px;
 }
 
@@ -148,20 +168,20 @@ display: flex;
     margin-right: 20px;
     /* margin-left: -50px; */
  
-    box-shadow: 0 0 10px red;
+    box-shadow: 0 0 10px var(--navbarcolor1);
     border: none;
     z-index: -1;
     transition: transform 0.4s;
     text-align: center;
     padding-top:20px ;
-    color: white;
+    color: var(--text);
   }
 
   .scroll_card:hover{
     /* width: 300px; */
     z-index: 100;
     transform: scale(1.05);
-    border: 2px solid red;
+    border: 2px solid var(--navbarcolor1);
     /* background-color: blue; */
 
   }
@@ -181,9 +201,19 @@ display: flex;
     height: 200px;
 }
 .heading{
-    color:white;
+    color:var(--text);
     font-size: 40px;
   
 
 }
-  
+.themeimage{
+  text-align: end;
+  /* margin-bottom: 550px; */
+ /* position: absolute; */
+
+}
+
+.themeimage img{
+   width: 50px;
+  height: 50px;
+}
