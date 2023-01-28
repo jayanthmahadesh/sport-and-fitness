@@ -89,6 +89,10 @@ class timing(View):
     def get(self,request):
         return render(request,'timing.html')
 
+class timing_all(View):
+    def get(self,request):
+        return render(request,'timing_all.html')
+
 class register(View):
     def get(self,request):
         return render(request,'register.html')
@@ -99,5 +103,5 @@ class Success(View):
         return render(request,'success.html')
 
     def post(self,request):
-        return redirect('indexpage')
+        return render(request,'success.html')
     
