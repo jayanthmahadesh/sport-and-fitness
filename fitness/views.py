@@ -35,7 +35,7 @@ class Login(View):
 class Logout(View):
     def get(self, request):
         request.session.clear()
-        return redirect('login')
+        return redirect('indexpage')
 
 
 class SignUp(View):
