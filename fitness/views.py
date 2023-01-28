@@ -104,4 +104,17 @@ class Success(View):
 
     def post(self,request):
         return render(request,'success.html')
+
+
+class Success_Custom(View):
+    def get(self, request):
+        return render(request, 'success_custom.html')
+
+    def post(self,request):
+        slot = request.POST.get('sport')
+        print(slot)
+        data = {
+            'slots': slot,
+        }
+        return render(request,'success_custom.html',data)
     

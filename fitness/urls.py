@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import Login, SignUp, Index,outdoor,Indoor,timing,register,Success
-from .views import timing_all
+from .views import timing_all,Success_Custom
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -13,5 +13,7 @@ urlpatterns = [
     path('timing',timing.as_view(),name='timing'),
     path('timing_all',timing_all.as_view(),name='timing_all'),
     path('register',register.as_view(),name='register'),
-    path('success',Success.as_view(),name='success')
+    path('success', Success.as_view(), name='success'),
+    path('success_custom', Success_Custom.as_view(), name='success_all'),
+
 ]
