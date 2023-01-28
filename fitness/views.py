@@ -14,13 +14,11 @@ class Login(View):
         username_tobe_check = request.POST.get('username')
         password_tobe_check = request.POST.get('password')
 
-
+        username_actual = User.objects.get(username=username_tobe_check)
 
         try:
-            username_actual = User.objects.get(username=username_tobe_check)
-            try:
-                if username_actual:
-                    flag = check_password(password_tobe_check, username_actual.password)
+            if username_actual:
+                flag = check_password(password_tobe_check, username_actual.password)
 
                     if flag:
                         request.session['username'] = username_actual.username
