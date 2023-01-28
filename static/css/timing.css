@@ -3,9 +3,9 @@
     --cyan: hsl(180, 62%, 55%);
     --orange: hsl(34, 97%, 64%);
     --blue: hsl(212, 86%, 64%);
-    --varyDarkBlue: hsl(234, 12%, 34%);
+    --varyDarkBlue: hsl(0, 0%, 56%);
     --grayishBlue: hsl(229, 6%, 66%);
-    --veryLightGray: hsl(0, 0%, 98%);
+    --veryLightGray: hsl(0, 0%, 0%);
     --weight1: 200;
     --weight2: 400;
     --weight3: 600;
@@ -15,14 +15,10 @@ body {
     font-size: 15px;
     font-family: 'Poppins', sans-serif;
     background-color: var(--veryLightGray);
+    /* background-color: red; */
 }
 
-.attribution { 
-    font-size: 11px; text-align: center; 
-}
-.attribution a { 
-    color: hsl(228, 45%, 44%); 
-}
+
 
 h1:first-of-type {
     font-weight: var(--weight1);
@@ -67,6 +63,8 @@ h1:last-of-type {
 
 img {
     float: right;
+    width: 40px;
+    height: 40px;
 }
 
 @media (max-width: 450px) {
@@ -97,7 +95,7 @@ img {
 
 h2 {
     color: var(--varyDarkBlue);
-    font-weight: var(--weight3);
+    /* font-weight: var(--weight3); */
 }
 
 

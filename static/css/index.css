@@ -1,5 +1,21 @@
+:root{
+  --main-bg-color:rgb(0, 0, 0);
+  --navbarcolor1:red;
+  --navbarcolor2:rgb(255, 102, 0);
+  --filter:blur(0px);
+  --border:red;
+}
+.darktheme{
+  --main-bg-color:rgb(226, 247, 255);
+  --navbarcolor1: rgb(129 129 129);
+  --navbarcolor2:rgb(251, 225, 208);
+  --filter:blur(10px);
+  --border:black;
+}
+
+
 body{
-    background-color: rgb(0, 0, 0);
+    background-color:var(--main-bg-color);
       margin:0px;
       padding:0px;
      
@@ -23,7 +39,7 @@ body{
       }
       #b::before{
         content: "";
-        background-image: conic-gradient(rgb(255, 4, 4) 0deg, rgb(0, 0, 0) 50deg, #000000 50deg, #000000 270deg);
+        background-image: conic-gradient(var(--border), var(--main-bg-color) 50deg,var(--main-bg-color) 50deg, var(--main-bg-color) 270deg);
       width:20000%;
         height:20000%;
         position: absolute;
@@ -33,7 +49,7 @@ body{
         content: "sdfasdf";
         width: 99%;
         height: 97%;
-        background: rgb(0, 0, 0);
+        background: var(--main-bg-color);
         position: absolute;
         display: flex;
         justify-content: center;
@@ -60,6 +76,7 @@ body{
     margin-left: -750px;
     height: 90%;
     z-index: -1;
+    filter:var(--filter);
 /* margin-top: 100px; */
   }
 
@@ -68,7 +85,7 @@ ul{
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: linear-gradient(90deg, rgba(255,14,14,1) 24%, rgb(255, 133, 39) 55%, rgba(255,0,0,1) 100%);
+  background: linear-gradient(90deg, var(--navbarcolor1) 24%, var(--navbarcolor2) 55%, var(--navbarcolor1) 100%);
 
   /* position: sticky; */
   /* width: 100%; */
@@ -104,8 +121,8 @@ li a {
     width: 400px;
     height: 500px;
     /* display: inline-block; */
-    background-color: rgb(0, 0, 0);
-    color: black;
+    background-color: var(--main-bg-color);
+    color: var(--main-bg-color);
     border-radius: 10px;
    
 
@@ -114,10 +131,10 @@ li a {
     width: 400px;
     height: 500px;
     /* display: inline-block; */
-    background-color: rgb(0, 0, 0);
-    color: black;
+    background-color: var(--main-bg-color);
+    color: var(--main-bg-color);
     border-radius: 10px;
-    box-shadow: 10px red;
+    box-shadow: 10px var(--navbarcolor1);
   }
   .card_one  img{
     margin-left: 25px;
@@ -146,7 +163,7 @@ li a {
     width: 100px;
     height: 50px;
     text-decoration: none;
-    background-color: red;
+    background-color: var(--navbarcolor1);
     color: white;
     border: none;
     border-radius: 10px;
@@ -163,4 +180,14 @@ li a {
     /* margin-left: 100px; */
 font-family:cursive;
 font-size: 30px;
+}
+.themeimage{
+  text-align: end;
+  margin-top: 550px;
+ 
+}
+
+.themeimage img{
+   width: 50px;
+  height: 50px;
 }
