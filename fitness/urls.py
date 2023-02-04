@@ -1,20 +1,19 @@
 from django.urls import path
-from .views import Login, SignUp, Index,outdoor,Indoor,timing,register,Success
+from .views import Login, SignUp, Index,outdoor,Indoor,timing,Success
 from .views import timing_all,Success_Custom,Logout
 from django.conf.urls.static import static
 from django.conf import settings
-
+from fitness import views
 urlpatterns = [
-    path('', Index.as_view(), name='indexpage'),
-    path('login', Login.as_view(), name='login'),
+    path('', views.Index, name='indexpage'),
+    path('login', views.Login, name='login'),
     path('logout', Logout.as_view(), name='logout'),
-    path('signup', SignUp.as_view(), name='signup'),
-    path('outdoor',outdoor.as_view(),name='outdoor'),
-    path('Indoor',Indoor.as_view(),name='Indoor'),
-    path('timing',timing.as_view(),name='timing'),
-    path('timing_all',timing_all.as_view(),name='timing_all'),
-    path('register',register.as_view(),name='register'),
-    path('success', Success.as_view(), name='success'),
-    path('success_custom', Success_Custom.as_view(), name='success_all'),
-
+    path('signup', views.SignUp, name='signup'),
+    path('outdoor',views.outdoor,name='outdoor'),
+    path('Indoor',views.Indoor,name='Indoor'),
+    path('timing',views.timing,name='timing'),
+    path('timing_all',views.timing_all,name='timing_all'),
+    path('success', views.Success, name='success'),
+    path('success_custom', views.Success_Custom, name='success'),
+    path('register',views.register,name = 'register')
 ]

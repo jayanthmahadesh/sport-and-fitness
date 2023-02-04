@@ -1,11 +1,8 @@
 from django.contrib import admin
-from .models.user import User
 
-
-class AdminUser(admin.ModelAdmin):
-    list_display = ['username']
-
-
+from fitness.models import custom_user
+from fitness.models import indoor_activities
+admin.site.register(custom_user)
+admin.site.register(indoor_activities)
 # Register your models here.
 
-admin.site.register(User, AdminUser)

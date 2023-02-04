@@ -11,13 +11,18 @@
     <div id="b"></div>
         <!-- navbar start -->
         <div class="navbar" style="z-index:101 ;">
-            <ul>
+            <ul class="na">
                 <b>
 
-                    <li><a class="webname" href="#home" style="font-size: 20px;">FITSPRINT</a></li>
+                    <li><a class="webname" href="/" style="font-size: 20px;">FITSPRINT</a></li>
                 </b>
-                <li style="float:right"><a href="#about">Login</a></li>
-              
+                
+                {% if request.session.username %}
+                <li style="float: right;"><a href="/logout" >Logout</a></li>
+                {% else %}
+                <li style="float:right"><a href="/signup">SignUp</a></li>
+                <li style="float:right"><a href="login">Login</a></li>
+                {% endif %}
             </ul>
         </div>
        
@@ -74,121 +79,36 @@
             </div>
         </div>
     </div>
-    <div class="eventheading">
+    <div class="eventheading">    
         Featured events
     </div>
-    
     <div class="scrollable">
-       
-
-        <a href="register"><div class="scroll_card">
-
-                <div class="heading">
-                    Push-up
-                </div>
-                <div class="image">
-                    <img src="static/images/pushup.png" alt="">
-                </div>
-                <div class="description">
-                    <br>Target : 1000 pushups within 24 hours
-                </div>
-                <div class="content">
-                    <b>Total prize pool : 1000$<br><br>max player : 100<br><br> Bet : $10<br><br>
-                </div>
-                <div class="button">
-                    <button>register</button>
-                </div>
-
-        
-        </div></a>
-        <a href="register"><div class="scroll_card">
-            <div class="cont">
-                <div class="heading">
-                    Running
-                </div>
-                <div class="image">
-                    <img src="static/images/running.jpeg" alt="">
-                </div>
-                <div class="description">
-                    <br>Target : run 20 miles in 24 hours
-                </div>
-                <div class="content">
-                    <b>Total prize pool : 500$<br><br>max player : 100<br><br> Bet : $5<br><br>
-                </div>
-                <div class="button">
-                    <button>register</button>
-                </div>
+    {% for event in event %}
+    <a href="register">
+        <div class="scroll_card">
+            <div class="heading">
+                {{event.event_name}}
             </div>
-        
-        </div></a>
-        <a href="register"><div class="scroll_card">
-            <div class="cont">
-                <div class="heading">
-                    Skipping
-                </div>
-                <div class="image">
-                    <img src="static/images/skipping.webp" alt="">
-                </div>
-                <div class="description">
-                    <br>Target : 1000 skips in 24 hours
-                </div>
-                <div class="content">
-                    <b>Total prize pool : 5000$<br><br>max player : 1000<br><br> Bet : $5<br><br>
-                </div>
-                <div class="button">
-                    <button>register</button>
-                </div>
+            <div class="image">
+                <img src="{{event.event_image.url}}" alt="">
             </div>
-        
-        </div></a>
-        <a href="register"><div class="scroll_card">
-            <div class="cont">
-                <div class="heading">
-                    marathon
-                </div>
-                <div class="image">
-                    <img src="static/images/marathon.jpeg" alt="">
-                </div>
-                <div class="description">
-                    <br>Target : 100 miles in 15 days
-                </div>
-                <div class="content">
-                    <b>Total prize pool : 10000$<br><br>max player : 100<br><br> Bet : $100<br><br>
-                </div>
-                <div class="button">
-                    <button>register</button>
-                </div>
+            <div class="description">
+                <br>Target : {{event.target}}
             </div>
-        
-        </div></a>
-        <a href="register"><div class="scroll_card">
-            <div class="cont">
-                <div class="heading">
-                    Crunches
-                </div>
-                <div class="image">
-                    <img src="static/images/crunch.jpeg" alt="">
-                </div>
-                <div class="description">
-                    <br>Target : 1000 crunches within 24 hours
-                </div>
-                <div class="content">
-                    <b>Total prize pool : 1000$<br><br>max player : 100<br><br> Bet : $10<br><br>
-                </div>
-                <div class="button">
-                    <button>register</button>
-                </div>
+            <div class="content">
+                <b>Total prize pool : ${{event.prize_pool}}<br><br>max player : {{event.max_players}}<br><br> Bet : ${{event.bet}}<br><br>
             </div>
-        
-        </div></a>
-       
-
-     
-      
+            <div class="button">
+            <button>register</button>
+            </div>
+            </div>
+    </a>
+    {% endfor %} 
     </div>
     
 </body>
 </html>
+
 <script>
     var theme = document.getElementById("theme");
     theme.onclick = function () {

@@ -16,6 +16,7 @@
 </video>
 
 
+
 <!-- navbar start -->
 <div class="navbar" style="z-index:101 ;">
     <ul>
@@ -24,7 +25,7 @@
             <li><a class="webname" href="#home" style="font-size: 20px;">FITSPRINT</a></li>
         </b>
         {% if request.session.username %}
-        <li><a href="/logout">Logout</a></li>
+        <li><a href="/logout" >Logout</a></li>
         {% else %}
         <li><a href="/login">Login</a></li>
         <li><a href="/signup">SignUp</a></li>
@@ -34,13 +35,21 @@
 </div>
 
 <!-- navbar end -->
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li  class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
 <div class="heading">
     Unleash the power of fitness
 </div>
 <!-- two cards start -->
 <div class="cards_container">
     <div class="card_one">
-        <div class="heading1">Indoor activities</div>
+        <div class="heading1"2>Indoor activities</div>
         <div class="image">
             <img src="/static/images/WhatsApp Image 2023-01-27 at 4.36.47 PM.jpeg" alt="">
         </div>

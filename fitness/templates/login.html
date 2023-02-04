@@ -134,6 +134,13 @@ button{
     </style>
 </head>
 <body>
+    {% if messages %}
+<ul class="messages" style="color:white;">
+    {% for message in messages %}
+    <li   class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
     <div class="background">
         <div class="shape"></div>
         <div class="shape"></div>
@@ -143,17 +150,14 @@ button{
         
         <h3>Login Here</h3>
 
-        <label for="username">Username</label>
-        <input type="text" placeholder="Email or Phone" id="username" name="username">
+       
+        <label for="">email</label>
+        <input type="email" placeholder="Email" id="email" name="email">
 
-        <label for="password">Password</label>
+        <label for="">Password</label>
         <input type="password" placeholder="Password" id="password" name="password">
 
         <button>Log In</button>
-<!--        <div class="social">-->
-<!--          <div class="go"><i class="fab fa-google"></i>  Google</div>-->
-<!--          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>-->
-<!--        </div>-->
     </form>
 </body>
 </html>

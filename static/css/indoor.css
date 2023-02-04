@@ -24,6 +24,7 @@ body{
     margin: 0px;
     padding: 0px;
     margin-top: 10px;
+    overflow: -moz-hidden-unscrollable;
 }
 #b{
     width: 100%;
@@ -41,8 +42,8 @@ body{
   #b::before{
     content: "";
     background-image: conic-gradient(var(--border) 0deg, var(--main-bg-color) 50deg, var(--main-bg-color) 50deg,var(--main-bg-color) 270deg);
-  width:20000%;
-    height:20000%;
+  width:200%;
+    height:200%;
     position: absolute;
     animation: rotate 4.1s linear infinite;
   }
@@ -68,14 +69,15 @@ body{
               transform: rotate(-360deg);
           }
       }
-ul{
+.na{
     list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background: linear-gradient(90deg, var(--navbarcolor1) 24%, var(--navbarcolor2) 55%, var(--navbarcolor1) 100%);
-
-  /* position: sticky; */
+  display: block;
+/* position: fixed; */
+width: 100%;
   /* width: 100%; */
 }
 li {
@@ -145,29 +147,19 @@ display: flex;
 /* scrolling part */
 
   .scrollable{
-    /* margin-top: 100px; */
-    /* background-color: black; */
-    /* border-left: 10px solid rgba(#000, .03); */
     z-index: -1;
     padding-top: 100px;
+    height: 600px;
+    width: 100%;
     overflow: auto;
     white-space: nowrap;
-    height: 600px;
-    
-
-    /* width: 90%; */
-    /* margin-left: 5%; */
+  
   }
   .scroll_card{
-    z-index: 99;
-    /* background-color: black; */
-    display: inline-block;
     width: 400px;
     height: 500px;
     margin-left: 20px;
     margin-right: 20px;
-    /* margin-left: -50px; */
- 
     box-shadow: 0 0 10px var(--navbarcolor1);
     border: none;
     z-index: -1;
@@ -175,20 +167,21 @@ display: flex;
     text-align: center;
     padding-top:20px ;
     color: var(--text);
+    display: inline-block;
+    text-decoration: none 
   }
 
   .scroll_card:hover{
-    /* width: 300px; */
+
     z-index: 100;
     transform: scale(1.05);
     border: 2px solid var(--navbarcolor1);
-    /* background-color: blue; */
+    cursor: pointer;
 
   }
 .first:hover{
     z-index: 100;
-    /* transform: scale(1.2); */
-    /* background-color: blue; */
+
     margin-left: 40px;
 
   }

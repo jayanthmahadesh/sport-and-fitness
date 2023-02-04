@@ -35,6 +35,14 @@
         display: inline-block;
         margin: 0 auto;
       }
+      .buttonone{
+        margin-top: 20px;
+        padding: 5px;
+        font-size: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px green;
+        cursor: pointer;
+      }
     </style>
     <body>
       <div class="card">
@@ -49,7 +57,7 @@
 
       <form action="/" method="post">
         {% csrf_token %}
-          <button type="submit" >Back to Home</button>
+          <button class="buttonone" type="submit" >Back to Home</button>
       </form>
     </body>
 </html>
